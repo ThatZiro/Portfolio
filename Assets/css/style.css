@@ -97,3 +97,21 @@ nav ul li a:hover::after {
   transition: all 0.5s;
   color: var(--darkBackgroundColor);
 }
+
+/*==== Sections =====*/
+.section-layout {
+  display: flex;
+}
+
+.section-layout h2 {
+  min-width: 200px;
+  max-width: 200px;
+  border-right: 5px solid var(--accentColor);
+  text-align: end;
+  padding-right: 10px;
+  font-size: 48px;
+}
+
+.section-layout section {
+  padding: 50px;
+}
