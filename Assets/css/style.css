@@ -1,6 +1,6 @@
 :root {
-  --accentColor: #008f8c;
-  --accentColorLight: #0caba8;
+  --accentColor: #445876;
+  --accentColorLight: #92cbcd;
   --darkBackgroundColor: #101010;
   --lightBackgroundColor: #ededf6;
 }
@@ -10,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   background-color: var(--lightBackgroundColor);
+  font-family: "Roboto", sans-serif;
 }
 /*===== Header and Navigation =====*/
 header {
@@ -21,18 +22,20 @@ header {
   justify-content: space-between;
 }
 h1 {
-  padding: 10px;
-  padding-left: 100px;
-  background-color: var(--accentColor);
+  padding: 5px;
+  padding-left: 75px;
+  font-size: 48px;
+  background-color: var(--accentColorLight);
   transition: all 0.5s;
   color: var(--darkBackgroundColor);
 }
 h1:hover {
-  background-color: var(--accentColorLight);
+  background-color: var(--accentColor);
 }
 
 nav {
   padding-right: 50px;
+  margin-right: 50px;
 }
 nav ul {
   list-style: none;
@@ -40,6 +43,8 @@ nav ul {
 }
 nav ul li {
   display: inline-block;
+  margin: 5px;
+  border-bottom: 5px solid var(--accentColorLight);
 }
 
 nav a {
@@ -47,7 +52,7 @@ nav a {
   text-decoration: none;
   flex-direction: column-reverse;
   align-items: center;
-  color: var(--accentColor);
+  color: var(--accentColorLight);
   transition: all 0.5s;
   padding: 10px;
   font-size: 24px;
@@ -61,27 +66,13 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a::after {
-  position: absolute;
-  content: ".";
-  color: transparent;
-  background-color: var(--accentColor);
-  height: 1px;
-  width: 0%;
-  transition: all 0.5s;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-}
-
 /*===== Banner =====*/
 .banner {
   position: relative;
   margin: 0;
   padding: 0;
   margin-bottom: 50px;
-  height: 300px;
+  height: 200px;
   width: 100%;
   background-image: url("../images/Banner.png");
   background-size: cover;
@@ -91,19 +82,26 @@ nav ul li a:hover::after {
 .banner h3 {
   position: absolute;
   bottom: 0;
-  right: 25px;
+  right: 100px;
   padding: 10px;
-  padding-left: 100px;
-  background-color: var(--accentColor);
+  background-color: var(--accentColorLight);
   transition: all 0.5s;
+  font-size: 36px;
   color: var(--darkBackgroundColor);
 }
 
 /*===== Sections =====*/
+main p {
+  font-size: 20px;
+  line-height: 200%;
+  margin: 0;
+  margin-bottom: 20px;
+}
 .section-layout {
   display: flex;
   margin-bottom: 40px;
-  width: 100%;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .section-layout h2 {
@@ -111,9 +109,14 @@ nav ul li a:hover::after {
   max-width: 200px;
   margin: 0px;
   border-right: 5px solid var(--accentColor);
+  color: var(--accentColor);
   text-align: end;
   padding-right: 10px;
   font-size: 48px;
+}
+.section-layout p {
+  color: var(--accentColor);
+  line-height: 150%;
 }
 
 .section-layout section {
@@ -125,7 +128,7 @@ nav ul li a:hover::after {
   width: 100%;
 }
 main figure {
-  border: 5px solid var(--accentColor);
+  border: 5px solid var(--accentColorLight);
   margin: 0px;
 }
 /* Main Project */
@@ -143,7 +146,7 @@ main figure {
   left: 0;
   padding: 10px;
   padding-left: 10px;
-  background-color: var(--accentColor);
+  background-color: var(--accentColorLight);
   transition: all 0.5s;
   color: var(--darkBackgroundColor);
 }
@@ -155,7 +158,8 @@ main figure {
 .project-caption h4 {
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  padding-top: 5px;
+  font-size: 10px;
   color: #355157;
 }
 /* Sub Project */
@@ -188,4 +192,21 @@ main figure {
 }
 #project-4 {
   background-image: url("../images/Sub-Project-4.jpg");
+}
+
+/*===== Footer =====*/
+ul {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  list-style: none;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer li {
+  font-size: 24px;
+  padding-bottom: 5px;
+  border-bottom: 5px solid var(--accentColor);
 }
