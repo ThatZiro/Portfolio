@@ -29,9 +29,6 @@ h1 {
   transition: all 0.5s;
   color: var(--darkBackgroundColor);
 }
-h1:hover {
-  background-color: var(--accentColor);
-}
 
 nav {
   padding-right: 50px;
@@ -42,28 +39,38 @@ nav ul {
   text-align: center;
 }
 nav ul li {
+  position: relative;
   display: inline-block;
   margin: 5px;
   border-bottom: 5px solid var(--accentColorLight);
 }
 
 nav a {
-  display: flex;
+  position: relative;
+  display: inline-block;
   text-decoration: none;
   flex-direction: column-reverse;
   align-items: center;
   color: var(--accentColorLight);
-  transition: all 0.5s;
   padding: 10px;
   font-size: 24px;
 }
-nav a:hover {
-  color: var(--accentColorLight);
-  position: relative;
-  bottom: 4px;
+nav li::before {
+  position: absolute;
+  content: "";
+  background-color: var(--accentColorLight);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  width: 100%;
+  transition: all 0.5s;
 }
-nav ul li a {
-  position: relative;
+nav li:hover::before {
+  height: 100%;
+}
+nav a:hover {
+  color: var(--darkBackgroundColor);
 }
 
 /*===== Banner =====*/
@@ -134,7 +141,7 @@ main figure {
   background-image: url("../images/Main-Project.jpg");
   position: relative;
   background-repeat: no-repeat;
-  min-height: 400px;
+  min-height: 600px;
   background-position: center;
   background-size: cover;
 }
@@ -173,7 +180,7 @@ main figure {
   position: relative;
   background-repeat: no-repeat;
   min-width: 40%;
-  min-height: 100px;
+  min-height: 200px;
   flex-grow: 1;
   background-position: center;
   background-size: cover;
@@ -193,7 +200,7 @@ main figure {
 }
 
 /*===== Footer =====*/
-ul {
+footer ul {
   margin: 0px;
   padding: 0px;
   width: 100%;
@@ -202,11 +209,35 @@ ul {
   display: flex;
   justify-content: space-around;
 }
+footer ul li a {
+  text-decoration: none;
+  color: var(--darkBackgroundColor);
+  padding: 0px;
+  font-size: 24px;
+  z-index: 2;
+}
 
 footer li {
-  font-size: 24px;
-  padding-bottom: 5px;
+  position: relative;
+  display: inline-block;
+  padding: 10px;
   border-bottom: 5px solid var(--accentColor);
+  font-size: 24px;
+}
+footer li::before {
+  position: absolute;
+  content: "";
+  background-color: var(--accentColor);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0%;
+  width: 100%;
+  transition: all 0.5s;
+  z-index: -1;
+}
+footer li:hover::before {
+  height: 100%;
 }
 
 @media only screen and (max-width: 1280px) {
