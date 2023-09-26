@@ -1,10 +1,14 @@
 :root {
   --accentColor: #445876;
   --accentColorLight: #92cbcd;
-  --darkBackgroundColor: #101010;
+  --darkBackgroundColor: #31343c;
   --lightBackgroundColor: #ededf6;
+  font-size: 12px;
+  letter-spacing: 1px;
 }
 body {
+  position: absolute;
+  width: 101vw; /* Body was scaling weird due to flexbox */
   margin: 0;
   padding: 0;
   display: flex;
@@ -14,6 +18,7 @@ body {
 }
 /*===== Header and Navigation =====*/
 header {
+  height: 100%;
   color: var(--lightBackgroundColor);
   background-color: var(--darkBackgroundColor);
   display: flex;
@@ -24,9 +29,9 @@ header {
 h1 {
   padding: 5px;
   padding-left: 75px;
-  font-size: 48px;
+  margin: 20px 0px;
+  font-size: 6rem;
   background-color: var(--accentColorLight);
-  transition: all 0.5s;
   color: var(--darkBackgroundColor);
 }
 
@@ -53,7 +58,7 @@ nav a {
   align-items: center;
   color: var(--accentColorLight);
   padding: 10px;
-  font-size: 24px;
+  font-size: 2.5rem;
 }
 nav li::before {
   position: absolute;
@@ -69,7 +74,7 @@ nav li::before {
 nav li:hover::before {
   height: 100%;
 }
-nav a:hover {
+nav li:hover a {
   color: var(--darkBackgroundColor);
 }
 
@@ -79,10 +84,11 @@ nav a:hover {
   margin: 0;
   padding: 0;
   margin-bottom: 50px;
-  height: 200px;
+  height: 300px;
   width: 100%;
   background-image: url("../images/Banner.png");
   background-size: cover;
+  background-repeat: no-repeat;
   box-shadow: inset 0px 10px 10px var(--darkBackgroundColor);
 }
 
@@ -93,13 +99,14 @@ nav a:hover {
   padding: 10px;
   background-color: var(--accentColorLight);
   transition: all 0.5s;
-  font-size: 36px;
+  font-size: 3rem;
+  text-align: center;
   color: var(--darkBackgroundColor);
 }
 
 /*===== Sections =====*/
 main p {
-  font-size: 20px;
+  font-size: 2rem;
   line-height: 200%;
   margin: 0;
   margin-bottom: 20px;
@@ -112,14 +119,14 @@ main p {
 }
 
 .section-layout h2 {
-  min-width: 200px;
-  max-width: 200px;
+  min-width: 250px;
+  max-width: 250px;
   margin: 0px;
   border-right: 5px solid var(--accentColor);
   color: var(--accentColor);
   text-align: end;
   padding-right: 10px;
-  font-size: 48px;
+  font-size: 5rem;
 }
 .section-layout p {
   color: var(--accentColor);
@@ -130,27 +137,46 @@ main p {
   padding: 0px 50px;
   width: 100%;
 }
-
 /*===== Projects =====*/
-main figure {
-  border: 5px solid var(--accentColorLight);
-  margin: 0px;
+.section-projects {
+  display: flex;
+  gap: 15px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-/* Main Project */
-.main-project {
-  background-image: url("../images/Main-Project.jpg");
+.section-projects a {
+  height: 200px;
   position: relative;
+  flex-grow: 1;
+  border: 10px solid var(--accentColorLight);
+  min-width: 40%;
+}
+.section-projects figure {
+  margin: 0px;
+  height: 100%;
   background-repeat: no-repeat;
-  min-height: 600px;
   background-position: center;
   background-size: cover;
+  background-color: var(--accentColor);
+  background-blend-mode: soft-light;
+  transition: all 0.5s;
+}
+
+.section-projects figure:hover {
+  background-color: transparent;
+}
+
+#big-layout {
+  min-height: 600px;
+  min-width: 90%;
 }
 .project-caption {
   position: absolute;
   bottom: 10px;
-  left: 0;
-  padding: 10px;
+  left: -1px;
+  padding: 20px 10px;
   padding-left: 10px;
+  letter-spacing: 0.15rem;
   background-color: var(--accentColorLight);
   transition: all 0.5s;
   color: var(--darkBackgroundColor);
@@ -158,22 +184,26 @@ main figure {
 .project-caption h3 {
   margin: 0;
   padding: 0;
-  font-size: 18px;
+  font-size: 2rem;
 }
 .project-caption h4 {
   margin: 0;
   padding: 0;
   padding-top: 5px;
-  font-size: 10px;
+  font-size: 1.5rem;
   color: #355157;
 }
 /* Sub Project */
-.sub-projects {
+/* .sub-project {
   margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 10px 10px;
+}
+.sub-projects a {
+  position: relative;
+  width: 100%;
 }
 
 .sub-projects figure {
@@ -184,19 +214,29 @@ main figure {
   flex-grow: 1;
   background-position: center;
   background-size: cover;
+} */
+
+.project-link {
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  z-index: 10;
 }
 
+#project-0 {
+  background-image: url("../images/Main-Project.png");
+}
 #project-1 {
-  background-image: url("../images/Sub-Project-1.jpg");
+  background-image: url("../images/Sub-Project-1.png");
 }
 #project-2 {
-  background-image: url("../images/Sub-Project-2.jpg");
+  background-image: url("../images/Sub-Project-2.png");
 }
 #project-3 {
-  background-image: url("../images/Sub-Project-3.jpg");
+  background-image: url("../images/Sub-Project-3.png");
 }
 #project-4 {
-  background-image: url("../images/Sub-Project-4.jpg");
+  background-image: url("../images/Sub-Project-4.png");
 }
 
 /*===== Footer =====*/
@@ -213,7 +253,7 @@ footer ul li a {
   text-decoration: none;
   color: var(--darkBackgroundColor);
   padding: 0px;
-  font-size: 24px;
+  font-size: 2rem;
   z-index: 2;
 }
 
@@ -222,7 +262,6 @@ footer li {
   display: inline-block;
   padding: 10px;
   border-bottom: 5px solid var(--accentColor);
-  font-size: 24px;
 }
 footer li::before {
   position: absolute;
@@ -240,18 +279,22 @@ footer li:hover::before {
   height: 100%;
 }
 
-@media only screen and (max-width: 1280px) {
-  body {
-    background-color: pink;
+@media only screen and (max-width: 1400px) {
+  :root {
+    font-size: 10px;
   }
-  /*Move Nagigation*/
 }
-
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1210px) {
   header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  header h1 {
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    font-size: 8rem;
   }
   h1 {
     padding: 5px 10px;
@@ -259,10 +302,6 @@ footer li:hover::before {
   nav {
     padding-right: 0px;
     margin-right: 0px;
-  }
-  body {
-    background-color: purple;
-    width: 100%;
   }
   .section-layout section {
     width: 100%;
@@ -286,7 +325,7 @@ footer li:hover::before {
     margin: 15px 0px;
     border-right: 0px;
     border-bottom: 5px solid var(--accentColor);
-    text-align: center;
+    text-align: start;
     padding-right: 0px;
   }
 
@@ -305,12 +344,31 @@ footer li:hover::before {
   footer li {
     font-size: 18px;
   }
-}
-@media only screen and (max-width: 768px) {
-  body {
-    background-color: blueviolet;
+  .section-projects a {
+    min-width: 40%;
+    min-height: 125px;
+    max-height: 125px;
   }
-  footer li {
-    font-size: 12px;
+  #big-layout {
+    min-height: 400px;
+    min-width: 90%;
+  }
+}
+@media only screen and (max-width: 900px) {
+  :root {
+    font-size: 8px;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .section-projects a {
+    min-width: 90%;
+  }
+  #big-layout {
+    min-height: 125px;
+    min-width: 90%;
+  }
+  footer ul {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
