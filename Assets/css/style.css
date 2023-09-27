@@ -231,6 +231,7 @@ footer a {
   margin: 0px;
   font-size: 2rem;
   z-index: 2;
+  transition: all 0.5s;
   border-bottom: 5px solid var(--accentColor);
 }
 
