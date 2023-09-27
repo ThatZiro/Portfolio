@@ -1,3 +1,7 @@
+/*======================================================================*/
+/*========================== Global Selectors ==========================*/
+/*======================================================================*/
+
 :root {
   --accentColor: #445876;
   --accentColorLight: #92cbcd;
@@ -6,26 +10,24 @@
   font-size: 12px;
   letter-spacing: 1px;
 }
-html{
+
+/*======================================================================*/
+/*=============================== Header ===============================*/
+/*======================================================================*/
+
+html {
   scroll-behavior: smooth;
 }
 body {
-  position: absolute;
-  width: 101vw; /* Body was scaling weird due to flexbox */
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
+  width: 100vw;
   background-color: var(--lightBackgroundColor);
   font-family: "Roboto", sans-serif;
 }
-/*===== Header and Navigation =====*/
+
+/*===== Header =====*/
 header {
-  height: 100%;
-  color: var(--lightBackgroundColor);
   background-color: var(--darkBackgroundColor);
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 }
@@ -38,31 +40,28 @@ h1 {
   color: var(--darkBackgroundColor);
 }
 
+/* ===== Navigation ===== */
 nav {
   padding-right: 50px;
   margin-right: 50px;
-}
-nav ul {
-  list-style: none;
-  text-align: center;
 }
 nav ul li {
   position: relative;
   display: inline-block;
   margin: 5px;
-  border-bottom: 5px solid var(--accentColorLight);
 }
 
 nav a {
   position: relative;
   display: inline-block;
   text-decoration: none;
-  flex-direction: column-reverse;
-  align-items: center;
   color: var(--accentColorLight);
   padding: 10px;
   font-size: 2.5rem;
+  border-bottom: 5px solid var(--accentColorLight);
 }
+
+/*== Button animations ==*/
 nav li::before {
   position: absolute;
   content: "";
@@ -81,20 +80,17 @@ nav li:hover a {
   color: var(--darkBackgroundColor);
 }
 
-/*===== Banner =====*/
+/* ===== Banner ===== */
 .banner {
   position: relative;
   margin: 0;
-  padding: 0;
   margin-bottom: 50px;
   height: 300px;
-  width: 100%;
   background-image: url("../images/Banner.png");
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: inset 0px 10px 10px var(--darkBackgroundColor);
 }
-
 .banner h3 {
   position: absolute;
   bottom: 0;
@@ -104,23 +100,24 @@ nav li:hover a {
   transition: all 0.5s;
   font-size: 3rem;
   text-align: center;
+  text-wrap: nowrap;
   color: var(--darkBackgroundColor);
 }
 
-/*===== Sections =====*/
+/*======================================================================*/
+/*=============================== Sections =============================*/
+/*======================================================================*/
+
+/* ===== Main Section Layout ===== */
 main p {
   font-size: 2rem;
-  line-height: 200%;
   margin: 0;
   margin-bottom: 20px;
 }
 .section-layout {
   display: flex;
-  margin-bottom: 40px;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin: 50px;
 }
-
 .section-layout h2 {
   min-width: 250px;
   max-width: 250px;
@@ -135,12 +132,12 @@ main p {
   color: var(--accentColor);
   line-height: 150%;
 }
-
 .section-layout section {
   padding: 0px 50px;
   width: 100%;
 }
-/*===== Projects =====*/
+
+/*===== Project Section =====*/
 .section-projects {
   display: flex;
   gap: 15px;
@@ -153,6 +150,11 @@ main p {
   flex-grow: 1;
   border: 10px solid var(--accentColorLight);
   min-width: 40%;
+}
+/* Tag used to override .section-projects a - Creates larger Image on screen */
+#big-layout {
+  min-height: 600px;
+  min-width: 90%;
 }
 .section-projects figure {
   margin: 0px;
@@ -169,10 +171,24 @@ main p {
   background-color: transparent;
 }
 
-#big-layout {
-  min-height: 600px;
-  min-width: 90%;
+/*===== Projects =====*/
+#project-0 {
+  background-image: url("../images/Main-Project.png");
 }
+#project-1 {
+  background-image: url("../images/Sub-Project-1.png");
+}
+#project-2 {
+  background-image: url("../images/Sub-Project-2.png");
+}
+#project-3 {
+  background-image: url("../images/Sub-Project-3.png");
+}
+#project-4 {
+  background-image: url("../images/Sub-Project-4.png");
+}
+
+/*== Project Captions==*/
 .project-caption {
   position: absolute;
   bottom: 10px;
@@ -196,68 +212,31 @@ main p {
   font-size: 1.5rem;
   color: #355157;
 }
-/* Sub Project */
-/* .sub-project {
-  margin-top: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 10px 10px;
-}
-.sub-projects a {
-  position: relative;
-  width: 100%;
-}
 
-.sub-projects figure {
-  position: relative;
-  background-repeat: no-repeat;
-  min-width: 40%;
-  min-height: 200px;
-  flex-grow: 1;
-  background-position: center;
-  background-size: cover;
-} */
-
-#project-0 {
-  background-image: url("../images/Main-Project.png");
-}
-#project-1 {
-  background-image: url("../images/Sub-Project-1.png");
-}
-#project-2 {
-  background-image: url("../images/Sub-Project-2.png");
-}
-#project-3 {
-  background-image: url("../images/Sub-Project-3.png");
-}
-#project-4 {
-  background-image: url("../images/Sub-Project-4.png");
-}
-
-/*===== Footer =====*/
+/*======================================================================*/
+/*=============================== Footer ===============================*/
+/*======================================================================*/
 footer ul {
-  margin: 0px;
   padding: 0px;
   width: 100%;
-  list-style: none;
   align-items: center;
   display: flex;
   justify-content: space-around;
 }
-footer ul li a {
+footer a {
   text-decoration: none;
   color: var(--darkBackgroundColor);
-  padding: 0px;
+  padding: 10px;
+  padding-bottom: 0px;
+  margin: 0px;
   font-size: 2rem;
   z-index: 2;
+  border-bottom: 5px solid var(--accentColor);
 }
 
 footer li {
   position: relative;
   display: inline-block;
-  padding: 10px;
-  border-bottom: 5px solid var(--accentColor);
 }
 footer li::before {
   position: absolute;
@@ -275,11 +254,23 @@ footer li:hover::before {
   height: 100%;
 }
 
+/*======================================================================*/
+/*============================= Media Queries ==========================*/
+/*======================================================================*/
+
+/* ^^ Default ^^ */
+/* Large Screens */
 @media only screen and (max-width: 1400px) {
   :root {
     font-size: 10px;
   }
+  .section-projects a {
+    min-width: 90%;
+  }
 }
+
+/* Medium sized Screens */
+/* Adjust Navigations and Project layout to achive a consistant web flow*/
 @media only screen and (max-width: 1210px) {
   header {
     flex-direction: column;
@@ -287,7 +278,8 @@ footer li:hover::before {
     align-items: center;
   }
   header h1 {
-    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
     text-align: center;
     margin: 0px;
     font-size: 8rem;
@@ -299,23 +291,29 @@ footer li:hover::before {
     padding-right: 0px;
     margin-right: 0px;
   }
+  footer li {
+    font-size: 18px;
+  }
+  /* Reduce the size of Big Layout so it doens't get to tall */
+  #big-layout {
+    min-height: 400px;
+    min-width: 90%;
+  }
+  nav ul {
+    padding: 0px;
+  }
+
   .section-layout section {
     width: 100%;
     padding: 0px 0px;
   }
-  .sub-projects figure {
-    min-width: 80%;
-  }
-
   .section-layout {
     flex-direction: column;
     justify-content: center;
   }
-
   .sub-projects figure {
     min-width: 80%;
   }
-
   .section-layout h2 {
     max-width: 100%;
     margin: 15px 0px;
@@ -324,7 +322,6 @@ footer li:hover::before {
     text-align: start;
     padding-right: 0px;
   }
-
   .banner h3 {
     position: absolute;
     bottom: 0;
@@ -336,23 +333,13 @@ footer li:hover::before {
     font-size: 24px;
     color: var(--darkBackgroundColor);
   }
-
-  footer li {
-    font-size: 18px;
-  }
   .section-projects a {
     min-width: 40%;
     min-height: 125px;
     max-height: 125px;
   }
-  #big-layout {
-    min-height: 400px;
-    min-width: 90%;
-  }
-  nav ul {
-    padding: 0px;
-  }
 }
+
 @media only screen and (max-width: 900px) {
   :root {
     font-size: 8px;
@@ -361,22 +348,54 @@ footer li:hover::before {
     border: 5px solid var(--accentColorLight);
   }
 }
+
+/* Small Screens */
+/* Stack Projects to give them better readability */
 @media only screen and (max-width: 770px) {
-  .section-projects a {
-    min-width: 90%;
-  }
-  #big-layout {
-    min-height: 125px;
-    min-width: 90%;
-  }
   footer ul {
     flex-direction: column;
     align-items: flex-start;
   }
+  .section-projects a {
+    min-width: 90%;
+  }
+  /* Scale Big Layout to look the same as the section-projects a */
+  #big-layout {
+    min-height: 125px;
+    min-width: 90%;
+  }
 }
 
+/* Extra Small Screens */
+/* Adjust elements to give extra room for elements that need Read*/
 @media only screen and (max-width: 570px) {
   :root {
     font-size: 6px;
+  }
+
+  header h1 {
+    font-size: 6rem;
+  }
+  nav a {
+    font-size: 2rem;
+    padding: 1px;
+    border-bottom: 2px solid var(--accentColorLight);
+  }
+
+  footer a {
+    border-bottom: 2px solid var(--accentColor);
+  }
+
+  .section-layout {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .banner {
+    height: 150px;
+  }
+  .banner h3 {
+    margin: 0;
+    font-size: 2rem;
   }
 }
