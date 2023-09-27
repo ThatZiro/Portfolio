@@ -253,6 +253,9 @@ footer li::before {
 footer li:hover::before {
   height: 100%;
 }
+footer a:hover {
+  color: var(--accentColorLight);
+}
 
 /*======================================================================*/
 /*============================= Media Queries ==========================*/
@@ -291,9 +294,6 @@ footer li:hover::before {
     padding-right: 0px;
     margin-right: 0px;
   }
-  footer li {
-    font-size: 18px;
-  }
   /* Reduce the size of Big Layout so it doens't get to tall */
   #big-layout {
     min-height: 400px;
@@ -303,6 +303,9 @@ footer li:hover::before {
     padding: 0px;
   }
 
+  footer a {
+    padding: 0px;
+  }
   .section-layout section {
     width: 100%;
     padding: 0px 0px;
@@ -363,6 +366,10 @@ footer li:hover::before {
   #big-layout {
     min-height: 125px;
     min-width: 90%;
+  }
+
+  footer li {
+    font-size: 18px;
   }
 }
 
