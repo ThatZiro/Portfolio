@@ -21,7 +21,7 @@ html {
 body {
   width: 100vw;
   background-color: var(--lightBackgroundColor);
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 /*===== Header =====*/
@@ -64,7 +64,7 @@ nav a {
 /*== Button animations ==*/
 nav li::before {
   position: absolute;
-  content: "";
+  content: '';
   background-color: var(--accentColorLight);
   bottom: 0;
   left: 0;
@@ -86,7 +86,7 @@ nav li:hover a {
   margin: 0;
   margin-bottom: 50px;
   height: 300px;
-  background-image: url("../images/Banner.png");
+  background-image: url('../images/Banner.png');
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: inset 0px 10px 10px var(--darkBackgroundColor);
@@ -102,6 +102,13 @@ nav li:hover a {
   text-align: center;
   text-wrap: nowrap;
   color: var(--darkBackgroundColor);
+}
+.banner img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 75%;
 }
 
 /*======================================================================*/
@@ -173,19 +180,20 @@ main p {
 
 /*===== Projects =====*/
 #project-0 {
-  background-image: url("../images/Main-Project.png");
+  /* background-image: url("../images/Main-Project.png"); */
+  background-image: url('../images/Listy-Flix.png');
 }
 #project-1 {
-  background-image: url("../images/Sub-Project-1.png");
+  background-image: url('../images/Sub-Project-1.png');
 }
 #project-2 {
-  background-image: url("../images/Sub-Project-2.png");
+  background-image: url('../images/Horiseon-Code-Refactor.jpg');
 }
 #project-3 {
-  background-image: url("../images/Sub-Project-3.png");
+  background-image: url('../images/Sub-Project-3.png');
 }
 #project-4 {
-  background-image: url("../images/Sub-Project-4.png");
+  background-image: url('../images/Sub-Project-4.png');
 }
 
 /*== Project Captions==*/
@@ -241,7 +249,7 @@ footer li {
 }
 footer li::before {
   position: absolute;
-  content: "";
+  content: '';
   background-color: var(--accentColor);
   bottom: 0;
   left: 0;
@@ -336,6 +344,10 @@ footer a:hover {
     transition: all 0.5s;
     font-size: 24px;
     color: var(--darkBackgroundColor);
+  }
+  .banner img {
+    height: 50%;
+    top: 40%;
   }
   .section-projects a {
     min-width: 40%;
